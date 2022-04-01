@@ -13,7 +13,7 @@ class DeviseCreateMembers < ActiveRecord::Migration[6.1]
       t.string :last_name_kana
       t.integer :attendance_status, default: "0"
       t.integer :birth_yaar
-      t.unteger :birth_month
+      t.integer :birth_month
       t.integer :birth_day
 
       ## Recoverable
