@@ -20,12 +20,16 @@
         <li>
           <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
         </li>
+      <% elsif member_signed_in? %>
+        <li>
+          <%= link_to "ログアウト", destroy_member_session_path, method: :delete %>
+        </li>
       <% end %>
       </ui>
     </header>
     <main>
       <%= yield %>
     </main>
-   
+
   </body>
 </html>
