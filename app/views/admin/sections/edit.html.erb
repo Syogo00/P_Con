@@ -1,2 +1,11 @@
-<h1>Admin::Sections#edit</h1>
-<p>Find me in app/views/admin/sections/edit.html.erb</p>
+<h2>部門編集</h2>
+<div>
+  <%= form_with model: @section, url: admin_section_path(@section.id), method: :patch do |f| %>
+    <div class="field">
+      <%= f.text_field :section_name %>
+    </div>
+    <div class="field">
+      <%= f.submit "変更を保存" %>
+    </div>
+  <% end %>
+</div>
