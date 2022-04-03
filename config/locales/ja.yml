@@ -1,0 +1,6 @@
+ja:
+  enums:
+    member:
+      attendance_status:
+        leaving_work: "退勤"
+        attendance: "出勤"

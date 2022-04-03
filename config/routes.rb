@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
 
+  scope module: :staff do
+    get 'graphs' => 'conditions#graph'
+    resources :conditions, only: [:new, :show, :edit, :index]
+    
+  end
   devise_for :members, skip: [:passwards], controllers: {
     registrations: "staff/registrations",
     sessions: 'staff/sessions'

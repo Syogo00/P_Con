@@ -18,13 +18,20 @@
         <%= f.text_field :birth_month %>月
         <%= f.text_field :birth_day %>日
       </div>
-      <div class="phone_number" >
+      <div class="field" >
         電話番号
         <%= f.text_field :phone_number %>
       </diV>
-      <div class="address">
+      <div class="field">
         住所
         <%= f.text_field :address %>
+      </div>
+      <div class="field">
+        メールアドレス
+        <%= f.email_field :email %>
+      </div>
+      <div class="field">
+        <%= f.submit "変更を保存" %>
       </div>
     <% end %>
   </div>
