@@ -1,2 +1,0 @@
-module Staff::HomeHelper
-end

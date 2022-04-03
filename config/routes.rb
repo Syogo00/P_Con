@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
 
-
   devise_for :members, skip: [:passwards], controllers: {
     registrations: "staff/registrations",
     sessions: 'staff/sessions'
@@ -11,9 +10,10 @@ Rails.application.routes.draw do
     sessions: "admin/sessions"
   }
 
-  namespace :staff do
-    resources :homes, only: [:edit]
-    get 'my_page' => 'home#top'
+
+  scope module: :staff do
+    get 'my_page' => 'members#top'
+    resources :members, only: [:index, :show, :edit, :update]
   end
 
   namespace :admin do

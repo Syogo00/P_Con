@@ -1,0 +1,23 @@
+
+<h2>マイページ</h2>
+<div>
+  <div>
+    <%= link_to "登録情報を編集する", edit_member_path(current_member.id) %>
+  </div>
+  <div>
+    <h4>・社員id</h4>
+    <%= @member.id %>
+  </div>
+  <div>
+    <h4>・社員名</h4>
+    <%= @member.first_name %><%= @member.last_name %>
+  </div>
+  <div>
+    <h4>・所属部門</h4>
+    <%= @member.section.section_name %>
+  </div>
+  <div>
+    <h4>・出勤状況</h4>
+    <%= @member.attendance_status %>
+  </div>
+</div>

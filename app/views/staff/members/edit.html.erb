@@ -1,0 +1,32 @@
+<div>
+  <h1>登録情報編集画面</h1>
+  <div>
+    <%= form_with model: @member, url: member_path(@member.id), method: :patch do |f| %>
+      <div class="field">
+        社員氏名
+        <%= f.text_field :first_name %>
+        <%= f.text_field :last_name %>
+      </div>
+      <div class="field">
+        社員氏名（フリガナ）
+        <%= f.text_field :first_name_kana %>
+        <%= f.text_field :last_name_kana %>
+      </div>
+      <div class="field">
+        生年月日
+        <%= f.text_field :birth_year %>年
+        <%= f.text_field :birth_month %>月
+        <%= f.text_field :birth_day %>日
+      </div>
+      <div class="phone_number" >
+        電話番号
+        <%= f.text_field :phone_number %>
+      </diV>
+      <div class="address">
+        住所
+        <%= f.text_field :address %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
