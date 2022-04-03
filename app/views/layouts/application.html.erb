@@ -22,6 +22,9 @@
         </li>
       <% elsif member_signed_in? %>
         <li>
+          <%= link_to "社員一覧", members_path %>
+        </li>
+        <li>
           <%= link_to "ログアウト", destroy_member_session_path, method: :delete %>
         </li>
       <% end %>

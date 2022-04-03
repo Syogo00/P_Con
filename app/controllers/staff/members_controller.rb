@@ -23,6 +23,8 @@ class Staff::MembersController < ApplicationController
   end
 
   def index
+    @member = Member.all
+    @sections = Section.all
   end
 
   private
