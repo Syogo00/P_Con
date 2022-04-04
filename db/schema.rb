@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_01_140322) do
+ActiveRecord::Schema.define(version: 2022_04_04_122018) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2022_04_01_140322) do
 
   create_table "conditions", force: :cascade do |t|
     t.integer "member_id"
-    t.integer "temperature"
+    t.float "temperature"
     t.integer "status", default: 0
     t.string "explation"
     t.datetime "created_at", precision: 6, null: false

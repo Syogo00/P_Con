@@ -4,3 +4,9 @@ ja:
       attendance_status:
         leaving_work: "退勤"
         attendance: "出勤"
+
+    condition:
+      status:
+        usually: "普通"
+        good: "良好"
+        bad: "不調"

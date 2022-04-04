@@ -5,6 +5,7 @@ class Member < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
    belongs_to :section
+   has_many :condition
 
    enum attendance_status: {leaving_work: 0, attendance: 1 }
 

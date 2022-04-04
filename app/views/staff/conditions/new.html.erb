@@ -1,2 +1,29 @@
-<h1>Staff::Conditions#new</h1>
-<p>Find me in app/views/staff/conditions/new.html.erb</p>
+<div>
+  <h1>体調登録画面</h1>
+  <div>
+    <%= form_with model: @condition, url: conditions_path, method: :post do |f| %>
+    <div class="field">
+      ・体調
+      <%= f.radio_button :status, Condition.statuses.key(0) %>
+      <%= f.label :status, Condition.statuses_i18n[:usually] %>
+
+      <%= f.radio_button :status, Condition.statuses.key(1) %>
+      <%= f.label :status, Condition.statuses_i18n[:good] %>
+
+      <%= f.radio_button :status, Condition.statuses.key(2) %>
+      <%= f.label :status, Condition.statuses_i18n[:bad] %>
+    </div>
+    <div class="field">
+      ・体温
+      <%= f.text_field :temperature %>℃
+    </div>
+    <div class="field">
+      ・補足説明
+      <%= f.text_area :explation %>
+    </div>
+    <div class="field">
+      <%= f.submit "保存する" %>
+    </div>
+    <% end %>
+  </div>
+</div>

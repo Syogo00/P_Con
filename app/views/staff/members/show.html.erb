@@ -1,2 +1,25 @@
-<h1>Staff::Members#show</h1>
-<p>Find me in app/views/staff/members/show.html.erb</p>
+<div>
+  <h1><%= @member.first_name %><%= @member.last_name %>さんの詳細</h1>
+  <div>
+    <div class="field">
+      ・社員ID
+      <%= @member.id %>
+    </div>
+    <div class="field">
+      ・社員名
+      <%= @member.first_name %><%= @member.last_name %>
+    </div>
+    <div class="field">
+      ・所属課
+      <%= @member.section.section_name %>
+    </div>
+    <div class="field">
+      ・出退勤状況
+      <%= @member.attendance_status_i18n %>
+    </div>
+    <div class="field">
+    </div>
+  </div>
+</div>
+
+
