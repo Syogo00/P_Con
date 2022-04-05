@@ -22,6 +22,12 @@
         </li>
       <% elsif member_signed_in? %>
         <li>
+          <%= link_to "マイページ", my_page_path %>
+        </li>
+        <li>
+          <%= link_to "体調登録履歴", conditions_path %>
+        </li>
+        <li>
           <%= link_to "社員一覧", members_path %>
         </li>
         <li>

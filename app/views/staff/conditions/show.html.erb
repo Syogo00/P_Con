@@ -1,2 +1,20 @@
-<h1>Staff::Conditions#show</h1>
-<p>Find me in app/views/staff/conditions/show.html.erb</p>
+<div>
+  <h1>体調情報詳細</h1>
+  <div>
+      <div>
+          ・体調
+          <%= @condition.status_i18n %>
+      </div>
+      <div>
+          ・体温
+          <%= @condition.temperature %>
+      </div>
+      <div>
+         ・補足欄
+         <%= @condition.explation %>
+      </div>
+      <div>
+          <%= link_to "体温変遷を見る", graphs_path %>
+      </div>
+  </div>
+</div>

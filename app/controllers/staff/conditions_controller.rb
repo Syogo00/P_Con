@@ -19,6 +19,8 @@ class Staff::ConditionsController < ApplicationController
   end
 
   def index
+    @conditions = current_member.condition
+    pp @conditions
   end
 
   def graph
