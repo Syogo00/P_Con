@@ -64,3 +64,5 @@ gem 'acts-as-taggable-on', '~> 8.0'
 gem "enum_help"
 
 gem  "chartkick"
+
+gem 'groupdate'

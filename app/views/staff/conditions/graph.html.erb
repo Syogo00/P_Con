@@ -1,2 +1,7 @@
-<h1>Staff::Conditions#graph</h1>
-<p>Find me in app/views/staff/conditions/graph.html.erb</p>
+<div>
+  <h1>体温変遷グラフ</h1>
+  <div>
+    <%= line_chart @conditions.pluck(:created_at, :temperature).map{|item| [item[0].to_date, item[1]]}, min: 34, max: 40 %>
+  </div>
+</div>
+

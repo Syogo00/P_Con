@@ -24,6 +24,7 @@ class Staff::ConditionsController < ApplicationController
   end
 
   def graph
+    @conditions = current_member.condition
   end
 
   private
