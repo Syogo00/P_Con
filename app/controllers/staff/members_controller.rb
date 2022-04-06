@@ -9,6 +9,8 @@ class Staff::MembersController < ApplicationController
   def edit
     @member = Member.find(current_member.id)
   end
+  
+  
 
   def update
     @member = Member.find(current_member.id)
@@ -24,7 +26,7 @@ class Staff::MembersController < ApplicationController
   end
 
   def index
-    @member = Member.all
+    @member = Member.all.search(params[:search])
     @sections = Section.all
   end
 

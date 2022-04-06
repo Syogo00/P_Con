@@ -6,6 +6,12 @@
     <%= render 'section_list', section: @sections %>
   </div>
   <div>
+    <%= form_tag(members_path, method: :get) do %>
+      <%= text_field_tag :search %>
+      <%= submit_tag 'search', name: nil %>
+    <% end %>
+  </div>
+  <div>
     <table>
       <thead>
         <tr>
