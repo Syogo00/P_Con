@@ -6,11 +6,16 @@ class Staff::MembersController < ApplicationController
     @member = current_member
   end
 
+  def change
+    @member = Member.find(current_member.id)
+    if  @member.update(update_params)
+      redirect_to my_page_path
+    end
+  end
+
   def edit
     @member = Member.find(current_member.id)
   end
-  
-  
 
   def update
     @member = Member.find(current_member.id)
@@ -33,7 +38,11 @@ class Staff::MembersController < ApplicationController
   private
 
   def member_params
-    params.require(:member).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :birth_year, :birth_month, :birth_day, :phone_number, :address, :email)
+    params.require(:member).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :birth_year, :birth_month, :birth_day, :phone_number, :address, :email, :section_id, :attendance_status)
+  end
+
+  def update_params
+    params.require(:member).permit(:attendance_status)
   end
 
 end

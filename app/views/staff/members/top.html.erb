@@ -16,9 +16,17 @@
     <h4>・所属部門</h4>
     <%= @member.section.section_name %>
   </div>
-  <div>
-    <h4>・出勤状況</h4>
-    <%= @member.attendance_status_i18n %>
+  <div class="field">
+    <h4>・出退勤状況</h4>
+    <%= form_with model: @member, url: change_path(current_member.id), method: :patch do |f| %>
+      <%= f.radio_button :attendance_status, Member.attendance_statuses.key(0) %>
+      <%= f.label :attendance_status,  Member.attendance_statuses_i18n[:leaving_work] %>
+
+      <%= f.radio_button :attendance_status,  Member.attendance_statuses.key(1) %>
+      <%= f.label :attendance_status, Member.attendance_statuses_i18n[:attendance] %>
+
+      <%= f.submit "変更する" %>
+    <% end %>
   </div>
 </div>
 <div>

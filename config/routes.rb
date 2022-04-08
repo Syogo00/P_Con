@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  namespace :admin do
+    get 'search' => 'search'
+    resources :members, only: [:index, :show]
+  end
   scope module: :staff do
     get 'graphs' => 'conditions#graph'
     resources :conditions, only: [:new, :create ,:show, :edit, :index]
@@ -18,6 +22,7 @@ Rails.application.routes.draw do
 
   scope module: :staff do
     get 'my_page' => 'members#top'
+    patch 'change' => 'members#change'
     get "search" => "search"
     resources :members, only: [:index, :show, :edit, :update]
   end
