@@ -2,6 +2,9 @@
   <h1><%= @member.first_name %><%= @member.last_name %>さんの詳細</h1>
   <div>
     <div>
+      <%= link_to "所属部門を変更する", edit_admin_member_path(@member.id) %>
+    </div>
+    <div>
       ・社員ID
       <%= @member.id %>
     </div>
@@ -24,6 +27,10 @@
     <div>
       ・住所
       <%= @member.address %>
+    </div>
+    <div>
+      ・所属課
+      <%= @member.section.section_name %>
     </div>
     <div>
       ・出退勤状況

@@ -1,4 +1,7 @@
 class Staff::ConditionsController < ApplicationController
+  
+  before_action :authenticate_member!
+  
   def new
     @condition = Condition.new
   end

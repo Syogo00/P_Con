@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get 'graphs/:id' => "members#graph"
     get 'search' => 'search'
-    resources :members, only: [:index, :show]
+    resources :members, only: [:index, :show, :edit, :update]
   end
   scope module: :staff do
     get 'graphs' => 'conditions#graph'
