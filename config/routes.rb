@@ -2,13 +2,14 @@ Rails.application.routes.draw do
 
 
   namespace :admin do
+    get 'graphs/:id' => "members#graph"
     get 'search' => 'search'
     resources :members, only: [:index, :show]
   end
   scope module: :staff do
     get 'graphs' => 'conditions#graph'
     resources :conditions, only: [:new, :create ,:show, :edit, :index]
-    
+
   end
   devise_for :members, skip: [:passwards], controllers: {
     registrations: "staff/registrations",
@@ -34,7 +35,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :sections, only: [:index, :create, :edit, :update]
   end
-  
+
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

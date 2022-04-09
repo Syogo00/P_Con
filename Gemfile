@@ -66,3 +66,5 @@ gem "enum_help"
 gem  "chartkick"
 
 gem 'groupdate'
+
+gem 'pry-byebug'
