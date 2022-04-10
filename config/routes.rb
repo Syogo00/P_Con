@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  root to: 'staff/homes#start'
 
   namespace :admin do
     get 'graphs/:id' => "members#graph"

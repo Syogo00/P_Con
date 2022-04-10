@@ -3,7 +3,7 @@
    <% section.each do |section| %>
    <ul>
        <li>
-        <%= link_to members_path({type: section.id}) do %>
+        <%= link_to admin_members_path({type: section.id}) do %>
           <%= section.section_name %>
         <% end %>
         </li>

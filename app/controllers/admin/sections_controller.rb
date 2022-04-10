@@ -8,8 +8,12 @@ class Admin::SectionsController < ApplicationController
 
   def create
     @section = Section.new(section_params)
-    @section.save
-    redirect_to admin_sections_path
+    if @section.save
+      redirect_to admin_sections_path
+    else
+      @sections = Section.all
+      render :index
+    end
   end
 
   def edit
@@ -18,8 +22,11 @@ class Admin::SectionsController < ApplicationController
 
   def update
     @section = Section.find(params[:id])
-    @section.update(section_params)
-    redirect_to admin_sections_path
+    if @section.update(section_params)
+      redirect_to admin_sections_path
+    else
+      render :edit
+    end
   end
 
   private

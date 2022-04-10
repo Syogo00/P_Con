@@ -2,7 +2,8 @@ class Admin::MembersController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @member = Member.all.search(params[:search])
+    type = params[:type] || Section.ids
+    @member = Member.where(section_id: type).search(params[:search])
     @sections = Section.all
   end
 

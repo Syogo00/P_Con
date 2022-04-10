@@ -3,6 +3,9 @@
 <div>
   <h1>所属社員一覧</h1>
   <div>
+    <%= render 'admin/members/section_list', section: @sections %>
+  </div>
+  <div>
     <%= form_tag(admin_members_path, method: :get) do %>
       <%= text_field_tag :search %>
       <%= submit_tag 'search', name: nil %>

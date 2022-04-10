@@ -31,7 +31,15 @@ class Staff::MembersController < ApplicationController
   end
 
   def index
-    @member = Member.all.search(params[:search])
+    # if params[:type] == '1'
+    #   @member = Member.where(section_id: 1)
+    # elsif params[:type] == '2'
+    #   @member = Member.where(section_id: 2)
+    # else
+    #   @member = Member.all.search(params[:search])
+    # end
+    type = params[:type] || Section.ids
+    @member = Member.where(section_id: type).search(params[:search])
     @sections = Section.all
   end
 
