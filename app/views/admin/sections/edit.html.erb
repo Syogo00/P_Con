@@ -1,5 +1,13 @@
 <h2>部門編集</h2>
 <div>
+  <% if @section.errors.any? %>
+    <%= @section.errors.count %>件のエラーが発生しました
+    <ul>
+      <% @section.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
   <%= form_with model: @section, url: admin_section_path(@section.id), method: :patch do |f| %>
     <div class="field">
       <%= f.text_field :section_name %>

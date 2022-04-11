@@ -1,6 +1,14 @@
 
 <div>
   <h2>部門登録</h2>
+  <% if @list.errors.any? %>
+    <%= @list.errors.count %>件のエラーが発生しました
+    <ul>
+      <% @list.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
   <%= form_with model: @section, url: admin_sections_path, method: :post  do |f| %>
     <div class="field">
       <%= f.text_field :section_name %>

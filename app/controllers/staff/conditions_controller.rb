@@ -1,7 +1,7 @@
 class Staff::ConditionsController < ApplicationController
-  
+
   before_action :authenticate_member!
-  
+
   def new
     @condition = Condition.new
   end
@@ -10,8 +10,11 @@ class Staff::ConditionsController < ApplicationController
     @condition = Condition.new(condition_params)
     @condition.member_id = current_member.id
     # pp @condition, current_member,"test", "hoge"
-    @condition.save
-    redirect_to condition_path(@condition.id)
+    if @condition.save
+      redirect_to condition_path(@condition.id)
+    else
+      render :new
+    end
   end
 
   def show

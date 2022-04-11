@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>P_Con</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,54 +10,65 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="vh-100">
     <header>
-      <h1 class="mr-2 ml-2">
-        P_Con
-      </h1>
-      <ui>
-      <% if admin_signed_in? %>
-        <li>
-          <%= link_to "TOPページへ",  admin_top_path %>
-        </li>
-        <li>
-          <%= link_to "社員一覧", admin_members_path %>
-        </li>
-        <li>
-          <%= link_to "部門一覧", admin_sections_path %>
-        </li>
-        <li>
-          <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
-        </li>
-      <% elsif member_signed_in? %>
-        <li>
-          <%= link_to "マイページ", my_page_path %>
-        </li>
-        <li>
-          <%= link_to "体調登録履歴", conditions_path %>
-        </li>
-        <li>
-          <%= link_to "社員一覧", members_path %>
-        </li>
-        <li>
-          <%= link_to "ログアウト", destroy_member_session_path, method: :delete %>
-        </li>
-      <% else %>
-        <li>
-          <%= link_to "TOPページ", root_path %>
-        </li>
-        <li>
-          <%= link_to "新規登録", new_member_registration_path %>
-        </li>
-        <li>
-          <%= link_to "ログイン", new_member_session_path %>
-        </li>
-      <% end %>
-      </ui>
+      <div class=" bg-dark sgadow-sm">
+        <nav class="navbar navbar-dark" >
+          <div class="container d-flex justify-content-between" >
+            <h1 class="text-white">
+              P_Con
+            </h1>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ui class="navbar-nav ml-auto">
+              <% if admin_signed_in? %>
+                <li class="nav-item">
+                  <%= link_to "TOPページへ",  admin_top_path, class: 'nav-link text-white' %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "社員一覧", admin_members_path, class: 'nav-link text-white' %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "部門一覧", admin_sections_path, class: 'nav-item text-white' %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-item text-white' %>
+                </li>
+              <% elsif member_signed_in? %>
+                <li class='nav-item'>
+                  <%= link_to "マイページ", my_page_path, class: 'nav-item text-white' %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "体調登録履歴", conditions_path, class: 'nav-item text-white' %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "社員一覧", members_path, class: 'nav-item text-white' %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "ログアウト", destroy_member_session_path, method: :delete, class: 'nav-item text-white' %>
+                </li>
+              <% else %>
+                <li class="nav-item">
+                  <%= link_to "TOPページ", root_path, class: 'nav-item text-white' %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "新規登録", new_member_registration_path, class: 'nav-item text-white' %>
+                </li>
+                <li class="nav-item ">
+                  <%= link_to "ログイン", new_member_session_path, class: 'nav-item text-white' %>
+                </li>
+              <% end %>
+              </ui>
+            </div>
+          </nav>
+        </div>
+      </div>
     </header>
     <main class="mb-auto">
       <%= yield %>
     </main>
-
+    <footer class="bg-dark pt-5 pd-4 w-100 footer"></footer>
   </body>
 </html>

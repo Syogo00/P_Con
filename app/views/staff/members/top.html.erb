@@ -1,34 +1,37 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <h1 class="mt-3 mb-2">マイページ</h1>
+      <div class="row justify-content-end">
+        <%= link_to "登録情報を編集", edit_member_path(current_member.id), class: "btn btn-primary" %>
+      </div>
+      <div class="field d-flex flex-row">
+        <h4 class="mr-4">・社員id</h4>
+        <%= @member.id %>
+      </div>
+      <div class="field d-flex flex-row">
+        <h4 class="mr-4">・社員名</h4>
+        <%= @member.first_name %><%= @member.last_name %>
+      </div>
+      <div class="field d-flex flex-row">
+        <h4 class="mr-4">・所属部門</h4>
+        <%= @member.section.section_name %>
+      </div>
+      <div class="field d-flex flex-row">
+        <h4 class="mr-5">・出退勤状況</h4>
+        <%= form_with model: @member, url: change_path(current_member.id), method: :patch do |f| %>
+          <%= f.radio_button :attendance_status, Member.attendance_statuses.key(0) %>
+          <%= f.label :attendance_status,  Member.attendance_statuses_i18n[:leaving_work] %>
 
-<h2>マイページ</h2>
-<div>
-  <div>
-    <%= link_to "登録情報を編集", edit_member_path(current_member.id) %>
-  </div>
-  <div>
-    <h4>・社員id</h4>
-    <%= @member.id %>
-  </div>
-  <div>
-    <h4>・社員名</h4>
-    <%= @member.first_name %><%= @member.last_name %>
-  </div>
-  <div>
-    <h4>・所属部門</h4>
-    <%= @member.section.section_name %>
-  </div>
-  <div class="field">
-    <h4>・出退勤状況</h4>
-    <%= form_with model: @member, url: change_path(current_member.id), method: :patch do |f| %>
-      <%= f.radio_button :attendance_status, Member.attendance_statuses.key(0) %>
-      <%= f.label :attendance_status,  Member.attendance_statuses_i18n[:leaving_work] %>
+          <%= f.radio_button :attendance_status,  Member.attendance_statuses.key(1) %>
+          <%= f.label :attendance_status, Member.attendance_statuses_i18n[:attendance] %>
 
-      <%= f.radio_button :attendance_status,  Member.attendance_statuses.key(1) %>
-      <%= f.label :attendance_status, Member.attendance_statuses_i18n[:attendance] %>
-
-      <%= f.submit "変更する" %>
-    <% end %>
+          <%= f.submit "変更する", class: "btn btn-success ml-3" %>
+        <% end %>
+      </div>
+      <div class="row justify-content-end">
+        <%= link_to "体調状況を登録する", new_condition_path, class: "btn btn-primary" %>
+      </div>
+    </div>
   </div>
-</div>
-<div>
-  <%= link_to "体調状況を登録する", new_condition_path %>
 </div>

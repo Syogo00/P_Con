@@ -8,9 +8,8 @@ class Staff::MembersController < ApplicationController
 
   def change
     @member = Member.find(current_member.id)
-    if  @member.update(update_params)
-      redirect_to my_page_path
-    end
+    @member.update(update_params)
+    redirect_to my_page_path
   end
 
   def edit
