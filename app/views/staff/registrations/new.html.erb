@@ -1,67 +1,85 @@
-<h2>新規登録</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "staff/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    社員名
-    <%= f.label "姓" %>
-    <%= f.text_field :first_name %>
-
-    <%= f.label "名" %>
-    <%= f.text_field :last_name %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <h1 class="mt-1 mb-2">新規登録</h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "staff/shared/error_messages", resource: resource %>
+        <div class="row">
+          <h5 class="mr-3">・社員名</h5>
+          <div class="form-group col-3">
+            <%= f.text_field :first_name, class: "form-control", placeholder: "姓" %>
+          </div>
+          <div class="form-group col-3">
+            <%= f.text_field :last_name, class: "form-control", placeholder: "名"  %>
+          </div>
+        </div>
+        <div class="row">
+          <h5 class="mr-3">・社員名（フリガナ）</h5>
+          <div class="form-group col-3">
+            <%= f.text_field :first_name_kana, class: "form-control", placeholder: "セイ" %>
+          </div>
+          <div class="form-group col-3">
+            <%= f.text_field :last_name_kana, class: "form-control", placeholder: "メイ" %>
+          </div>
+　　　　</div>
+        <div class="row">
+          <h5 class="mr-3">・所属課</h5>
+          <div class="form-group col-4">
+            <%= f.select :section_id, options_from_collection_for_select(Section.all, :id, :section_name), class: "form-select" %>
+          </div>
+        </div>
+        <div class="row">
+          <h5 class="mr-3">・生年月日</h5>
+          <div clas="form-group col-2">
+            <%= f.text_field :birth_year, class: "form-control", placeholder: "年" %>
+          </div>
+          <div class="form-group col-2">
+            <%= f.text_field :birth_month, class: "form-control", placeholder: "月" %>
+          </div>
+          <div class="form-group col-2">
+            <%= f.text_field :birth_day, class: "form-control", placeholder: "日" %>
+          </div>
+        </div>
+        <div class="row">
+          <h5 class="mr-3">・電話番号</h5>
+          <div class="form-group col-3">
+            <%= f.text_field :phone_number, class: "form-control", placeholder: "電話番号" %>
+          </div>
+        </div>
+        <div class="row">
+          <h5 class="mr-3">・住所</h5>
+          <div class="form-group col-3">
+            <%= f.text_field :address, class: "form-control", placeholder: "住所" %>
+          </div>
+        </div>
+        <div class="row">
+          <h5 class="mr-3">・メールアドレス</h5>
+          <div class="form-group col-4">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "メールアドレス" %>
+          </div>
+        </div>
+        <div class="row">
+          <h5 class="mr-3">・パスワード</h5>
+          <div class="form-group col-3">
+            <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %>文字以上)</em>
+            <% end %>
+            <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "パスワード" %>
+          </div>
+        </div>
+        <div class="row">
+          <h5 class="mr-3">・パスワード（再入力）</h5>
+          <div class="form-group col-3">
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "パスワード（再入力）" %>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="form-group col-10">
+            <%= f.submit "新規登録", class: "btn btn-success btn-block" %>
+          </div>
+        </div>
+      <% end %>
+      <%= render "staff/shared/links" %>
+    </div>
   </div>
-  <div class="field">
-    社員名（フリガナ）
-    <%= f.label "セイ" %>
-    <%= f.text_field :first_name_kana %>
-
-    <%= f.label "メイ" %>
-    <%= f.text_field :last_name_kana %>
-  </div>
-  <div class="field">
-    所属課
-    <%= f.select :section_id, options_from_collection_for_select(Section.all, :id, :section_name) %>
-  </div>
-  <div clas="field">
-    生年月日
-    <%= f.label "年（西暦）" %>
-    <%= f.text_field :birth_year %>
-
-    <%= f.label "月" %>
-    <%= f.text_field :birth_month %>
-
-    <%=f.label "日" %>
-    <%= f.text_field :birth_day %>
-  </div>
-  <div class="field">
-    <%= f.label "電話番号" %>
-    <%= f.text_field :phone_number %>
-  </div>
-  <div class="field">
-    <%= f.label "住所" %>
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label "メールアドレス" %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-  <div class="field">
-    <%= f.label "パスワード" %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %>文字以上)</em>
-    <% end %>
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label "パスワード（再入力）" %>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "新規登録" %>
-  </div>
-<% end %>
-
-<%= render "staff/shared/links" %>
+</div>

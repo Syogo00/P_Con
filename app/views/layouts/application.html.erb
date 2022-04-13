@@ -11,10 +11,10 @@
   </head>
 
   <body class="vh-100">
-    <header>
+    <header class="sticky-top">
       <div class=" bg-dark sgadow-sm">
         <nav class="navbar navbar-dark" >
-          <div class="container d-flex justify-content-between" >
+          <div class="container d-flex justify-end" >
             <h1 class="text-white">
               P_Con
             </h1>
@@ -25,7 +25,7 @@
               <ui class="navbar-nav ml-auto">
               <% if admin_signed_in? %>
                 <li class="nav-item">
-                  <%= link_to "TOPページへ",  admin_top_path, class: 'nav-link text-white' %>
+                  <%= link_to "TOPページへ",admin_top_path, class: 'nav-link text-white' %>
                 </li>
                 <li class="nav-item">
                   <%= link_to "社員一覧", admin_members_path, class: 'nav-link text-white' %>
@@ -66,9 +66,9 @@
         </div>
       </div>
     </header>
-    <main class="mb-auto">
+    <main class="mb-6 main">
       <%= yield %>
     </main>
-    <footer class="bg-dark pt-5 pd-4 w-100 footer"></footer>
+    <footer class="bg-dark pt-5 pb-6 w-100 fixed-bottom"></footer>
   </body>
 </html>

@@ -1,20 +1,22 @@
-<div>
-  <h1>体調情報詳細</h1>
-  <div>
-      <div>
-          ・体調
-          <%= @condition.status_i18n %>
+<div class="container">
+  <div class="row justify-content-center">
+      <div class="col-8">
+          <h1 class="mt-3 mb-4">体調情報詳細</h1>
+          <div class="field d-flex flex-row">
+            <h5 class="mr-4">・体調</h5>
+            <%= @condition.status_i18n %>
+          </div>
+          <div class="field d-flex flex-row">
+            <h5 class="mr-4">・体温</h5>
+            <%= @condition.temperature %>℃
+          </div>
+          <div class="field d-flex flex-row">
+            <h5 class="mr-4">・補足欄</h5>
+            <%= @condition.explation %>
+          </div>
+          <div class="row justify-content-end">
+            <%= link_to "体温変遷を見る", graphs_path, class: "btn btn-primary" %>
+          </div>
       </div>
-      <div>
-          ・体温
-          <%= @condition.temperature %>
-      </div>
-      <div>
-         ・補足欄
-         <%= @condition.explation %>
-      </div>
-      <div>
-          <%= link_to "体温変遷を見る", graphs_path %>
-      </div>
-  </div>
+    </div>
 </div>

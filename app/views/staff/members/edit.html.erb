@@ -1,47 +1,72 @@
-<div>
-  <h1>登録情報編集画面</h1>
-  <div>
-    <% if @member.errors.any? %>
-      <%= @member.errors.count %>件のエラーが発生しました
-      <ul>
-        <% @member.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <h1 class="mt-3 mb-4">登録情報編集</h1>
+      <div>
+        <% if @member.errors.any? %>
+          <%= @member.errors.count %>件のエラーが発生しました
+          <ul>
+            <% @member.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
         <% end %>
-      </ul>
-    <% end %>
-    <%= form_with model: @member, url: member_path(@member.id), method: :patch do |f| %>
-      <div class="field">
-        社員氏名
-        <%= f.text_field :first_name %>
-        <%= f.text_field :last_name %>
-      </div>
-      <div class="field">
-        社員氏名（フリガナ）
-        <%= f.text_field :first_name_kana %>
-        <%= f.text_field :last_name_kana %>
-      </div>
-      <div class="field">
-        生年月日
-        <%= f.text_field :birth_year %>年
-        <%= f.text_field :birth_month %>月
-        <%= f.text_field :birth_day %>日
-      </div>
-      <div class="field" >
-        電話番号
-        <%= f.text_field :phone_number %>
-      </diV>
-      <div class="field">
-        住所
-        <%= f.text_field :address %>
-      </div>
-      <div class="field">
-        メールアドレス
-        <%= f.email_field :email %>
-      </div>
-      <div class="field">
-        <%= f.submit "変更を保存" %>
-      </div>
-    <% end %>
+        <%= form_with model: @member, url: member_path(@member.id), method: :patch do |f| %>
+          <div class="row">
+            <h5>・社員氏名</h5>
+            <div class="form-group col-md-3">
+              <%= f.text_field :first_name, class: "form-control" %>
+            </div>
+            <div class="form-group col-md-3">
+              <%= f.text_field :last_name, class: "form-control" %>
+            </div>
+          </div>
+          <div class="row">
+            <h5>・社員氏名（フリガナ）</h5>
+            <div class="form-group col-md-3">
+              <%= f.text_field :first_name_kana, class: "form-control" %>
+            </div>
+            <div class="form-group col-md-3">
+              <%= f.text_field :last_name_kana, class: "form-control" %>
+            </div>
+          </div>
+          <div class="row d-flex flex-row">
+            <h5>・生年月日</h5>
+            <div class="form-group col-md-2 d-flex flex-row">
+              <%= f.text_field :birth_year, class: "form-control mr-1" %><span>年</span>
+            </div>
+            <div class="form-group col-md-1 d-flex flex-row">
+              <%= f.text_field :birth_month, class: "form-control" %><span>月</span>
+            </div>
+            <div class="form-group col-md-1 d-flex flex-row">
+              <%= f.text_field :birth_day, class: "form-control" %><span>日</span>
+            </div>
+          </div>
+          <div class="row">
+            <h5>・電話番号</h5>
+            <div class="form-group col-md-3" >
+              <%= f.text_field :phone_number, class: "form-control" %>
+            </diV>
+          </div>
+          <div class="row">
+            <h5>・住所</h5>
+            <div class="form-group col-md-4">
+              <%= f.text_field :address, class: "form-control" %>
+            </div>
+          </div>
+          <div class="row">
+            <h5>・メールアドレス</h5>
+            <div class="fomr-group col-md-3">
+              <%= f.email_field :email, class: "form-control" %>
+            </div>
+          </div>
+          <div class="row justify-content-end">
+            <div class="form-group">
+              <%= f.submit "変更を保存", class: "btn btn-success btn-lg" %>
+            </div>
+          </div>
+        <% end %>
+    </div>
   </div>
 </div>
 

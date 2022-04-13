@@ -1,19 +1,26 @@
-<h2>部門編集</h2>
-<div>
-  <% if @section.errors.any? %>
-    <%= @section.errors.count %>件のエラーが発生しました
-    <ul>
-      <% @section.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <h2 class="mt-3 mb-4">部門編集</h2>
+      <% if @section.errors.any? %>
+        <%= @section.errors.count %>件のエラーが発生しました
+        <ul>
+          <% @section.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
       <% end %>
-    </ul>
-  <% end %>
-  <%= form_with model: @section, url: admin_section_path(@section.id), method: :patch do |f| %>
-    <div class="field">
-      <%= f.text_field :section_name %>
+      <div class="row justify-content-center">
+        <%= form_with model: @section, url: admin_section_path(@section.id), method: :patch do |f| %>
+          <div class="form-group">
+            <%= f.text_field :section_name, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.submit "変更を保存", class: "btn btn-success btn-block" %>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <div class="field">
-      <%= f.submit "変更を保存" %>
-    </div>
-  <% end %>
+  </div>
 </div>
+
