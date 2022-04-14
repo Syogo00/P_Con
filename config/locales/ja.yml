@@ -1,4 +1,24 @@
 ja:
+  activerecord:
+    attributes:
+      member:
+        email: "メールアドレス"
+        password: "パスワード"
+        first_name: "氏名（姓）"
+        last_name: "氏名（名）"
+        first_name_kana: "氏名（セイ）"
+        last_name_kana: "氏名（メイ）"
+        birth_year: "誕生年"
+        birth_month: "誕生月"
+        birth_day: "誕生日"
+
+      condition:
+        temperature: "体温"
+        explation: "補足説明"
+        
+      section:
+        section_name: "部門名"
+
   enums:
     member:
       attendance_status:
