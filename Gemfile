@@ -70,3 +70,5 @@ gem 'groupdate'
 gem 'pry-byebug'
 
 gem 'rails-i18n'
+
+gem 'rspec-rails'
