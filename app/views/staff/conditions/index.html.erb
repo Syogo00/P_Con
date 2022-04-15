@@ -10,6 +10,7 @@
               <th>体調</th>
               <th>体温(℃)</th>
               <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -19,6 +20,7 @@
               <td><%= condition.status_i18n %></td>
               <td><%= condition.temperature %></td>
               <td><%= link_to "詳細", condition_path(condition.id), class: "btn btn-primary" %></td>
+              <td><%= link_to "削除", condition_path(condition.id), method: :delete, class: "btn btn-danger" %></td>
             </tr>
             <% end %>
           </tbody>

@@ -4,6 +4,7 @@ class Staff::MembersController < ApplicationController
 
   def top
     @member = current_member
+    @condition = @member.condition.limit(1).order(created_at: :desc)
   end
 
   def change

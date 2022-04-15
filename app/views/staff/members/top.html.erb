@@ -6,16 +6,16 @@
         <%= link_to "登録情報を編集", edit_member_path(current_member.id), class: "btn btn-primary" %>
       </div>
       <div class="field d-flex flex-row">
-        <h4 class="mr-4">・社員id</h4>
-        <%= @member.id %>
+        <h4 class="mr-5">・社員id</h4>
+        <b><%= @member.id %></b>
       </div>
       <div class="field d-flex flex-row">
         <h4 class="mr-4">・社員名</h4>
-        <%= @member.first_name %><%= @member.last_name %>
+        <b><%= @member.first_name %><%= @member.last_name %></b>
       </div>
       <div class="field d-flex flex-row">
         <h4 class="mr-4">・所属部門</h4>
-        <%= @member.section.section_name %>
+        <b><%= @member.section.section_name %>
       </div>
       <div class="field d-flex flex-row">
         <h4 class="mr-5">・出退勤状況</h4>
@@ -29,8 +29,31 @@
           <%= f.submit "変更する", class: "btn btn-success ml-3" %>
         <% end %>
       </div>
+      <div class="field mb-3">
+        <h4 class="mb-5">・最近の体調</h4>
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th>登録日時</th>
+              <th>体調</th>
+              <th>体温</th>
+              <th>補足説明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @condition.each do |condition| %>
+            <tr>
+              <td><%= condition.created_at.to_s(:datetime_jp) %></td>
+              <td><%= condition.status_i18n %></td>
+              <td><%= condition.temperature %></td>
+              <td><%= condition.explation %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
       <div class="row justify-content-end">
-        <%= link_to "体調状況を登録する", new_condition_path, class: "btn btn-primary" %>
+        <%= link_to "体調状況を登録する", new_condition_path, class: "btn btn-primary mt-2" %>
       </div>
     </div>
   </div>

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   scope module: :staff do
     get 'graphs' => 'conditions#graph'
-    resources :conditions, only: [:new, :create ,:show, :edit, :index]
+    resources :conditions, only: [:new, :create ,:show, :destroy, :index]
 
   end
   devise_for :members, skip: [:passwards], controllers: {

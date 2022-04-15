@@ -4,15 +4,15 @@
           <h1 class="mt-3 mb-4">体調情報詳細</h1>
           <div class="field d-flex flex-row">
             <h5 class="mr-4">・体調</h5>
-            <%= @condition.status_i18n %>
+            <b><%= @condition.status_i18n %></b>
           </div>
           <div class="field d-flex flex-row">
             <h5 class="mr-4">・体温</h5>
-            <%= @condition.temperature %>℃
+            <b><%= @condition.temperature %>℃</b>
           </div>
           <div class="field d-flex flex-row">
             <h5 class="mr-4">・補足欄</h5>
-            <%= @condition.explation %>
+            <b><%= @condition.explation %></b>
           </div>
           <div class="row justify-content-end">
             <%= link_to "体温変遷を見る", graphs_path, class: "btn btn-primary" %>

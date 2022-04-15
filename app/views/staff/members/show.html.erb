@@ -4,23 +4,23 @@
       <h1 class="mt-3 mb-4"><%= @member.first_name %><%= @member.last_name %>さんの詳細</h1>
         <div class="field d-flex flex-row">
           <h5 class="mr-4">・社員ID</h5>
-          <%= @member.id %>
+          <b><%= @member.id %></b>
         </div>
         <div class="field d-flex flex-row">
           <h5 class="mr-4">・社員名</h5>
-          <%= @member.first_name %>  <%= @member.last_name %>
+          <b><%= @member.first_name %>  <%= @member.last_name %></b>
         </div>
         <div class="field d-flex flex-row">
           <h5 class="mr-4">・社員名（フリガナ）</h5>
-          <%= @member.first_name_kana %>  <%= @member.last_name_kana %>
+          <b><%= @member.first_name_kana %>  <%= @member.last_name_kana %></b>
         </div>
         <div class="field d-flex flex-row">
           <h5 class="mr-4">・所属課</h5>
-          <%= @member.section.section_name %>
+          <b><%= @member.section.section_name %></b>
         </div>
         <div class="field d-flex flex-row">
           <h5 class="mr-4">・出勤状況</h4>
-          <%= @member.attendance_status_i18n %>
+          <b><%= @member.attendance_status_i18n %></b>
         </div>
         <div class="row justify-content-end">
           <%= link_to "社員一覧画面へ", members_path, class: "btn btn-primary" %>

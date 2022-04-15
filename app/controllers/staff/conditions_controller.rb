@@ -21,7 +21,11 @@ class Staff::ConditionsController < ApplicationController
     @condition = Condition.find(params[:id])
   end
 
-  def edit
+  def destroy
+    @condition = Condition.find(params[:id])
+    @condition.member.id = current_member.id
+    @condition.destroy
+    redirect_to conditions_path
   end
 
   def index
