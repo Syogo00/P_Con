@@ -1,0 +1,16 @@
+inherit_from:
+  - .rubocop_airbnb.yml
+  
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'bin/*'
+    - 'config/environments/*'
+    - 'config/application.rb'
+    - 'config/initializers/*'
+    - 'lib/tasks/*'
+    - 'vendor/**/*'
+    - 'path/ruby'
+    
+  require:
+    - rubocop-rails

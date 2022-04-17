@@ -32,5 +32,4 @@ class Admin::MembersController < ApplicationController
   def member_params
     params.require(:member).permit(:section_id)
   end
-
 end

@@ -1,5 +1,4 @@
 class Staff::ConditionsController < ApplicationController
-
   before_action :authenticate_member!
 
   def new
@@ -42,5 +41,4 @@ class Staff::ConditionsController < ApplicationController
   def condition_params
     params.require(:condition).permit(:member_id, :temperature, :status, :explation)
   end
-
 end

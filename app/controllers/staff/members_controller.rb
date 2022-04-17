@@ -1,5 +1,4 @@
 class Staff::MembersController < ApplicationController
-
   before_action :authenticate_member!
 
   def top
@@ -52,5 +51,4 @@ class Staff::MembersController < ApplicationController
   def update_params
     params.require(:member).permit(:attendance_status)
   end
-
 end

@@ -1,6 +1,6 @@
 class Admin::SectionsController < ApplicationController
   before_action :authenticate_admin!
-  
+
   def index
     @sections = Section.all
     @section = Section.new
@@ -34,5 +34,4 @@ class Admin::SectionsController < ApplicationController
   def section_params
     params.require(:section).permit(:section_name)
   end
-
 end

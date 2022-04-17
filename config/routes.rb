@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root to: 'staff/homes#start'
 
   namespace :admin do
@@ -9,18 +8,16 @@ Rails.application.routes.draw do
   end
   scope module: :staff do
     get 'graphs' => 'conditions#graph'
-    resources :conditions, only: [:new, :create ,:show, :destroy, :index]
-
+    resources :conditions, only: [:new, :create, :show, :destroy, :index]
   end
   devise_for :members, skip: [:passwards], controllers: {
     registrations: "staff/registrations",
-    sessions: 'staff/sessions'
+    sessions: 'staff/sessions',
   }
 
   devise_for :admins, skip: [:passwards, :registrations], controllers: {
-    sessions: "admin/sessions"
+    sessions: "admin/sessions",
   }
-
 
   scope module: :staff do
     get 'my_page' => 'members#top'
@@ -36,8 +33,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :sections, only: [:index, :create, :edit, :update]
   end
-
-
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
