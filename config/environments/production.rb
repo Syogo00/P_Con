@@ -118,6 +118,6 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
-  config.hosts << "2cdca16675184df19a8f23accdbb93c6.vfs.cloud9.ap-northeast-1.amazonaws.com"
+  #config.hosts << "2cdca16675184df19a8f23accdbb93c6.vfs.cloud9.ap-northeast-1.amazonaws.com"
 
 end
