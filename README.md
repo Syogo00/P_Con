@@ -22,7 +22,27 @@
 
 
 ## 設計書
+・ワイヤーフレーム
+（社員用）
+https://docs.google.com/presentation/d/15fIyaCgsaom60Hf2aQb8sc8oXsJRgPFe/edit?usp=sharing&ouid=109109493891267097076&rtpof=true&sd=true
 
+（管理者用）
+https://docs.google.com/presentation/d/1T9y2dFjkCKkE1zTU_ZoGOCx7y2tBTZq_/edit?usp=sharing&ouid=109109493891267097076&rtpof=true&sd=true
+
+・画面遷移図
+https://docs.google.com/spreadsheets/d/1PruQ2fhP_KuDtE7Lk5KXP2LVU23uafpy/edit?usp=sharing&ouid=109109493891267097076&rtpof=true&sd=true
+
+・テーブル定義書
+https://docs.google.com/spreadsheets/d/1JlU5zyz_jZicveHyrjGU7BgRR-wl4pyu/edit?usp=sharing&ouid=109109493891267097076&rtpof=true&sd=true
+
+・アプリケーション詳細
+
+
+・ER図
+https://drive.google.com/file/d/1hVM1NOOh1YMEJAjs2dmMzh1v6BVua_js/view?usp=sharing
+
+・テスト仕様書
+https://docs.google.com/spreadsheets/d/1rMVmAptRbOQS9edFodFueueqTFQYYDjS/edit?usp=sharing&ouid=109109493891267097076&rtpof=true&sd=true
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1hTXBw2f4IfKCitecBxPTPRIlN7SLJdEguWtxwYVwIlQ/edit?usp=sharing
